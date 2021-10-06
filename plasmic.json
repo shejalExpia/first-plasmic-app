@@ -41,7 +41,13 @@
           "componentType": "page"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "tc8t7qIODeW",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/blank_project/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
       "images": [
         {
           "id": "fBOMxWFwr",

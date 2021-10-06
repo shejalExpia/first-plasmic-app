@@ -31,11 +31,14 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 
+import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 5GroU1xQ2m/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: anqwo3UY8Xt2uhLRY4dUyg/projectcss
 import * as sty from "./PlasmicHomepage.module.css"; // plasmic-import: pDrkoDKmfG/css
 
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: tc8t7qIODeW/icon
 import logoImgpngFBoMxWFwr from "./images/logoImgpng.png"; // plasmic-import: fBOMxWFwr/picture
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -50,8 +53,8 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  text?: p.Flex<"div">;
   img?: p.Flex<"img">;
+  button?: p.Flex<"button">;
 };
 
 export interface DefaultHomepageProps {
@@ -66,6 +69,10 @@ function PlasmicHomepage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, args, overrides, forNode, dataFetches } = props;
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants()
+  });
 
   return (
     <React.Fragment>
@@ -84,25 +91,257 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.text
-            )}
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(defaultcss.all, sty.freeBox__oYrCd)}
           >
-            {"Welcome to your first page."}
-          </div>
+            <img
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(defaultcss.img, sty.img)}
+              src={logoImgpngFBoMxWFwr}
+            />
 
-          <img
-            data-plasmic-name={"img"}
-            data-plasmic-override={overrides.img}
-            alt={""}
-            className={classNames(defaultcss.img, sty.img)}
-            src={logoImgpngFBoMxWFwr}
-          />
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(defaultcss.all, sty.freeBox__risrd)}
+            >
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(defaultcss.all, sty.freeBox__d9OoV)}
+              >
+                <p.Stack
+                  as={"a"}
+                  hasGap={true}
+                  className={classNames(defaultcss.a, sty.link__x3Yer)}
+                >
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__bymmD)}
+                      role={"img"}
+                    />
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.text___5NaBp
+                    )}
+                  >
+                    {"Services"}
+                  </div>
+
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__de7Af)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </p.Stack>
+
+                <p.Stack
+                  as={"a"}
+                  hasGap={true}
+                  className={classNames(defaultcss.a, sty.link__oyiNx)}
+                >
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__c7Tp5)}
+                      role={"img"}
+                    />
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.text__dIuv
+                    )}
+                  >
+                    {"Features"}
+                  </div>
+
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__dxmlB)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </p.Stack>
+
+                <p.Stack
+                  as={"a"}
+                  hasGap={true}
+                  className={classNames(defaultcss.a, sty.link___7H1Qt)}
+                >
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__lWvOh)}
+                      role={"img"}
+                    />
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.text__atXgq
+                    )}
+                  >
+                    {"Company"}
+                  </div>
+
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__gtAuQ)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </p.Stack>
+
+                <p.Stack
+                  as={"a"}
+                  hasGap={true}
+                  className={classNames(defaultcss.a, sty.link__eSaig)}
+                >
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__nk3Pi)}
+                      role={"img"}
+                    />
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.text___591Q6
+                    )}
+                  >
+                    {"Contact"}
+                  </div>
+
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__rQ6C)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </p.Stack>
+
+                <p.Stack
+                  as={"a"}
+                  hasGap={true}
+                  className={classNames(defaultcss.a, sty.link__pcRf1)}
+                >
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__kUQdo)}
+                      role={"img"}
+                    />
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.text___81Tsu
+                    )}
+                  >
+                    {"Log in"}
+                  </div>
+
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__nh74Y)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </p.Stack>
+
+                <p.Stack
+                  as={"a"}
+                  hasGap={true}
+                  className={classNames(defaultcss.a, sty.link__eqMtr)}
+                >
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__ev5Jz)}
+                      role={"img"}
+                    />
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.text__d0Xc0
+                    )}
+                  >
+                    {"Sign up"}
+                  </div>
+
+                  {false ? (
+                    <IconIcon
+                      className={classNames(defaultcss.all, sty.svg__rzsxZ)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </p.Stack>
+              </p.Stack>
+
+              {false ? (
+                <div className={classNames(defaultcss.all, sty.freeBox__tqkgl)}>
+                  <button
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames(
+                      defaultcss.button,
+                      defaultcss.__wab_text,
+                      sty.button
+                    )}
+                  >
+                    {"Sign up"}
+                  </button>
+
+                  <p.Stack
+                    as={"a"}
+                    hasGap={true}
+                    className={classNames(defaultcss.a, sty.link__mFdxs)}
+                  >
+                    {false ? (
+                      <IconIcon
+                        className={classNames(defaultcss.all, sty.svg___9AiZm)}
+                        role={"img"}
+                      />
+                    ) : null}
+
+                    <div
+                      className={classNames(
+                        defaultcss.all,
+                        defaultcss.__wab_text,
+                        sty.text__wGqWn
+                      )}
+                    >
+                      {"Log in"}
+                    </div>
+
+                    {false ? (
+                      <IconIcon
+                        className={classNames(defaultcss.all, sty.svg__jjGqb)}
+                        role={"img"}
+                      />
+                    ) : null}
+                  </p.Stack>
+                </div>
+              ) : null}
+            </p.Stack>
+          </p.Stack>
         </div>
       </div>
     </React.Fragment>
@@ -110,17 +349,17 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "img"],
-  text: ["text"],
-  img: ["img"]
+  root: ["root", "img", "button"],
+  img: ["img"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  text: "div";
   img: "img";
+  button: "button";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -184,8 +423,8 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    text: makeNodeComponent("text"),
     img: makeNodeComponent("img"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
